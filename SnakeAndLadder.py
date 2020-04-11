@@ -1,17 +1,17 @@
 import random
 import time
 
-
 class LudoBoard(object):
     def __init__(self, boardSize):
         self.boardSize = boardSize
         self.cellOccupied = {}
-        self.ladderLength = [0,0,0,5,7,9 ]
+        self.ladderLength = [0,0,0,5,7,9]
         self.boardLayout = []
 
         self._createBoard()
         self._addLadder()
-        #self._printBoard()
+
+        self._printBoard()
         self._addSnake()
         self._printBoard()
 
@@ -84,6 +84,7 @@ class Player(object):
         self.pos = 0
 
 def gameLogic(playerObj, gameObj, playerName):
+    print(("Player {}: Poition {}").format(playerName, playerObj.pos))
     print("Player %s rolling the dice" % playerName)
     time.sleep(1)
     rollDice = random.choice([1,2,3,4,5,6])
@@ -101,7 +102,7 @@ def main(boardSize):
     p1= Player()
     p2= Player()
     print("Starting the game")
-    while p1.pos != boardSize and p1.pos != boardSize:
+    while p1.pos != boardSize and p2.pos != boardSize:
         position = gameLogic(p1, ludogame, "P1")
         print("Player1 position = %s" % position)
         print("---------------------------------------")
@@ -119,4 +120,3 @@ def main(boardSize):
 
 if __name__ == "__main__":
     boardSize = 100
-    main(boardSize)
