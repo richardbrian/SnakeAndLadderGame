@@ -84,7 +84,7 @@ class Player(object):
         self.pos = 0
 
 def gameLogic(playerObj, gameObj, playerName):
-    print(("Player {}: Poition {}").format(playerName, playerObj.pos))
+    print(("Player {}: Position {}").format(playerName, playerObj.pos))
     print("Player %s rolling the dice" % playerName)
     time.sleep(1)
     rollDice = random.choice([1,2,3,4,5,6])
